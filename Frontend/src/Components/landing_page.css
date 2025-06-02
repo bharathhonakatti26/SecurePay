@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  letter-spacing: 1.5px;
+  color: #ffffff; /* White text */
+}
+
+.landing-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2em;
+  color: #b0c4de; /* Light blue text */
+}
+
+.landing-btn {
+  padding: 0.8em 2.5em;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: #1e90ff; /* Blue button */
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(30, 144, 255, 0.15); /* Blue shadow */
+}
+
+.landing-btn:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.landing-btn:active {
+  background: #0b3d91; /* Even darker blue on click */
+  transform: translateY(0); /* Reset lift on click */
+}
+
+.landing-footer {
+  margin-top: 2em;
+  font-size: 0.9rem;
+  color: #888888; /* Muted gray text */
+}
+
+.landing-footer a {
+  color: #1e90ff; /* Blue links */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.landing-footer a:hover {
+  color: #1565c0; /* Darker blue on hover */
+}

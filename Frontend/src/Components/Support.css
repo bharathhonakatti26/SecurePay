@@ -1,0 +1,127 @@
+.support-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #1e1e2f; /* Dark background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+  color: #f0f0f0; /* Light text color */
+}
+
+.support-title {
+  text-align: center;
+  font-size: 2em;
+  color: #ffffff; /* White text */
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.support-description {
+  text-align: center;
+  font-size: 1.2em;
+  color: #b0c4de; /* Light blue text */
+  margin-bottom: 30px;
+}
+
+.support-info {
+  margin-bottom: 30px;
+}
+
+.support-info h2 {
+  font-size: 1.5em;
+  color: #ffffff; /* White text */
+  margin-bottom: 10px;
+}
+
+.support-info p {
+  font-size: 1em;
+  color: #dcdcdc; /* Light gray text */
+  margin: 5px 0;
+}
+
+.support-feedback h2 {
+  font-size: 1.5em;
+  color: #ffffff; /* White text */
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+}
+
+.contact-form label {
+    font-size: 1em;
+    margin-left: 30px;
+    color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444444; /* Subtle border */
+  border-radius: 4px;
+  background-color: #2a2a3b; /* Darker background for inputs */
+  color: #ffffff; /* White text */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888888; /* Placeholder text color */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 6px rgba(30, 144, 255, 0.5); /* Blue glow on focus */
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #1e90ff; /* Blue button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.feedback-submit-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1e90ff; /* Blue button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.feedback-submit-btn:hover {
+  background-color: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.feedback-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-group-input{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    width: 100%;
+}

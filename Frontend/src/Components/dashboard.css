@@ -1,0 +1,835 @@
+/* Layout */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #111111; /* Slightly lighter black for sidebar */
+  color: #ffffff; /* White text */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar.closed {
+  width: 60px; /* Collapsed width */
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-item:hover {
+  background: #333333; /* Dark gray hover effect */
+}
+
+.sidebar-icon {
+  font-size: 1.5em; /* Larger icons for a classical look */
+  margin-right: 1em;
+}
+
+.sidebar-text {
+  font-size: 1em;
+}
+
+.sidebar-text-with-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logout-icon {
+  font-size: 1.2em;
+  margin-left: 1em;
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.logout-icon:hover {
+  color: #ff4d4d; /* Red hover effect for logout icon */
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 2.5em; /* Add gap at the top */
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: absolute;
+  top: 17px;
+  right: 15px;
+  background: #444444; /* Dark gray button */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  transition: background 0.3s, right 0.3s; /* Smooth transition for position */
+}
+
+.sidebar.closed .toggle-btn {
+  right: 33px; /* Adjust position when sidebar is closed */
+}
+
+.toggle-btn:hover {
+  background: #666666; /* Slightly lighter gray on hover */
+}
+
+/* .dashboard-container {
+  padding: 2em;
+  background: #111111; 
+  color: #ffffff;
+  height: 80vh;
+} */
+
+.dashboard-content {
+  flex: 1;
+  padding: 2em 2em 0em 2em; /* Padding for top, right, bottom, left */
+  background: #000000; /* Black background */
+  overflow-y: auto;
+}
+
+.dashboard-title {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 1em;
+  color: #1e90ff; /* Blue text */
+  margin-top: 0px;
+}
+
+.dashboard-description {
+  font-size: 1.2em;
+  color: #b0c4de; /* Light blue text */
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr; /* Unequal grid columns */
+  grid-template-rows: auto auto; /* Two rows */
+  gap: 1.5em;
+}
+
+/* Grid 1: Virtual Cards */
+.virtual-cards {
+  grid-column: 1 / 2; /* Occupies the first column */
+  grid-row: 1 / 2; /* Occupies the first row */
+  background: #222222; /* Dark gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  color: #ffffff; /* White text */
+}
+
+.Virtual-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.Virtual-head h2 {
+  font-size: 1.5em;
+  margin: 0px;
+}
+
+/* Grid 2: Actions */
+.actions-grid {
+  grid-column: 2 / 3; /* Occupies the second column */
+  grid-row: 1 / 2; /* Occupies the first row */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1em;
+  background: #222222; /* Dark gray background */
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.action-card {
+  background: #1e90ff; /* Blue background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 8px;
+  padding: 1em;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.action-card:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.action-card:active {
+  transform: scale(0.95); /* Slight shrink effect on click */
+}
+
+/* Grid 3: Expense Graph */
+.expense-graph {
+  grid-column: 1 / 2; /* Spans both columns */
+  grid-row: 2 / 3; /* Occupies the second row */
+  padding: 1em;
+  background: #222222;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  color: #ffffff; /* White text */
+}
+
+.expense-graph h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+}
+
+/* Grid 4: Recent Payments */
+.recent-payments {
+  grid-column: 2 / 3; /* Occupies the second column */
+  grid-row: 2 / 3; /* Occupies the second row */
+  background: #222222; /* Dark gray background */
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  color: #ffffff; /* White text */
+}
+
+.recent-payments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-payments li {
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+  color: #b0c4de; /* Light blue text */
+}
+
+.Virtual-head div {
+  display: flex;
+  justify-content: space-between; /* Space between the buttons */
+  align-items: center; /* Align buttons vertically */
+  gap: 1em; /* Add spacing between the buttons */
+}
+
+.add-card-btn {
+  background: #1e90ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-card-btn:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em; /* Space between card items */
+  padding: 0;
+  margin: 0.5em 2em;
+}
+
+.cards-list div {
+  display: flex;
+  justify-content: space-between; /* Space between the items */
+  align-items: center;
+  width: 70%; /* Full width for card items */
+}
+
+.cards-list div p {
+  margin: 0; /* Remove default margin for paragraphs */
+  font-size: 1rem; /* Adjust font size for better readability */
+  color: #b0c4de; /* Light blue text for consistency */
+}
+
+.card-item {
+  background: #333333; /* Darker gray background */
+  color: #ffffff; /* White text */
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.card-item p {
+  margin: 0.5em 0;
+}
+
+/* Flex layout for card details */
+.card-item div {
+  display: flex;
+  justify-content: space-between; /* Space between the items */
+  align-items: center; /* Align items vertically */
+  margin-top: 0.5em; /* Add some spacing above the container */
+  width: 25%;
+}
+
+.card-item div p {
+  margin: 0; /* Remove default margin for paragraphs */
+  font-size: 1rem; /* Adjust font size for better readability */
+  color: #b0c4de; /* Light blue text for consistency */
+}
+
+/* Add Card Form */
+.add-card-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e1e2f; /* Darker background for a modern look */
+  color: #ffffff; /* White text */
+  padding: 2em;
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  z-index: 1000;
+  width: 500px; /* Fixed width for consistency */
+}
+
+.add-card-form h2 {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #1e90ff; /* Blue heading for emphasis */
+}
+
+.add-card-form label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: #b0c4de; /* Light blue text for labels */
+}
+
+.add-card-form input,
+.add-card-form select {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #444444; /* Subtle border for inputs */
+  border-radius: 6px; /* Softer rounded corners */
+  background: #2a2a3b; /* Slightly lighter background for inputs */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.add-card-form input:focus,
+.add-card-form select:focus {
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+  outline: none;
+}
+
+.add-card-form button {
+  margin-right: 1em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-card-form button[type="submit"] {
+  background: #1e90ff; /* Blue button */
+  color: #ffffff;
+}
+
+.add-card-form button[type="submit"]:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.add-card-form button[type="button"] {
+  background: #ff4d4d; /* Red button */
+  color: #ffffff;
+}
+
+.add-card-form button[type="button"]:hover {
+  background: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Card Number Input */
+.card-number-input {
+  display: flex;
+  gap: 0.8em; /* Increased spacing between boxes */
+  margin-top: 0.5em;
+  justify-content: center; /* Center the input boxes */
+}
+
+.card-number-input input {
+  width: 4em; /* Wider boxes for better readability */
+  padding: 0.8em;
+  text-align: center;
+  border: 1px solid #444444; /* Subtle border for inputs */
+  border-radius: 6px; /* Softer rounded corners */
+  background: #2a2a3b; /* Slightly lighter background for inputs */
+  color: #ffffff; /* White text */
+  font-size: 1.2rem; /* Larger font for better readability */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-number-input input:focus {
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+  outline: none;
+}
+
+/* Card Type Options */
+.card-type-options {
+  display: flex;
+  gap: 1em; /* Space between options */
+  margin-top: 0.5em;
+}
+
+.card-type-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* Space between radio button and label text */
+  font-size: 1rem;
+  color: #ffffff; /* White text */
+}
+
+.card-type-options input[type="radio"] {
+  accent-color: #1e90ff; /* Blue color for radio buttons */
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+}
+
+/* No Cards Message */
+.no-cards-message {
+  font-size: 1.2rem;
+  color: #b0c4de; /* Light blue text */
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* MPIN Popup */
+.mpin-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e1e2f;
+  color: #ffffff;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  text-align: center;
+}
+
+.mpin-popup input {
+  width: 100%;
+  padding: 0.8em;
+  margin: 1em 0;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  background: #2a2a3b;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.mpin-popup button {
+  margin: 0.5em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mpin-popup button:first-of-type {
+  background: #1e90ff;
+  color: #ffffff;
+}
+
+.mpin-popup button:first-of-type:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+.mpin-popup button:last-of-type {
+  background: #ff4d4d;
+  color: #ffffff;
+}
+
+.mpin-popup button:last-of-type:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* MPIN Input Container */
+.mpin-input-container {
+  display: flex;
+  gap: 0.5em; /* Space between boxes */
+  justify-content: center;
+  margin: 1em 0;
+}
+
+/* MPIN Box */
+.mpin-box {
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  background: #2a2a3b;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.mpin-box:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+/* Send Money Popup */
+.send-money-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #1e1e2f; /* Dark background for the popup */
+  color: #ffffff; /* White text */
+  padding: 2em;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Strong shadow */
+  text-align: center;
+  width: 400px; /* Fixed width for the popup */
+}
+
+.popup-content h2 {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  color: #1e90ff; /* Blue heading for emphasis */
+}
+
+.popup-option {
+  background: #1e90ff; /* Blue button */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0.5em 0;
+  transition: background 0.3s, transform 0.2s;
+  width: 100%; /* Full width for buttons */
+}
+
+.popup-option:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.popup-close-btn {
+  background: #ff4d4d; /* Red button */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.popup-close-btn:hover {
+  background: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Send To Mobile Popup */
+.send-to-mobile-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #1e1e2f; /* Dark background for the popup */
+  color: #ffffff; /* White text */
+  padding: 2em;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Strong shadow */
+  text-align: center;
+  width: 400px; /* Fixed width for the popup */
+}
+
+.popup-content h2 {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  color: #1e90ff; /* Blue heading for emphasis */
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: #b0c4de; /* Light blue text for labels */
+}
+
+.popup-content input {
+  width: 90%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #444444; /* Subtle border for inputs */
+  border-radius: 6px; /* Softer rounded corners */
+  background: #2a2a3b; /* Slightly lighter background for inputs */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.popup-content input:focus {
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+  outline: none;
+}
+
+.popup-content button {
+  margin: 0.5em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.popup-content button[type="submit"] {
+  background: #1e90ff; /* Blue button */
+  color: #ffffff;
+}
+
+.popup-content button[type="submit"]:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.popup-content button[type="button"] {
+  background: #ff4d4d; /* Red button */
+  color: #ffffff;
+}
+
+.popup-content button[type="button"]:hover {
+  background: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.send-to-mobile-popup select {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #444444; /* Subtle border for inputs */
+  border-radius: 6px; /* Softer rounded corners */
+  background: #2a2a3b; /* Slightly lighter background for inputs */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.send-to-mobile-popup select:focus {
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+  outline: none;
+}
+
+/* Add Money Popup */
+.add-money-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #1e1e2f; /* Dark background for the popup */
+  color: #ffffff; /* White text */
+  padding: 2em;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Strong shadow */
+  text-align: center;
+  width: 400px; /* Fixed width for the popup */
+}
+
+.popup-content h2 {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  color: #1e90ff; /* Blue heading for emphasis */
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: #b0c4de; /* Light blue text for labels */
+}
+
+.popup-content input,
+.popup-content select {
+  width: 90%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #444444; /* Subtle border for inputs */
+  border-radius: 6px; /* Softer rounded corners */
+  background: #2a2a3b; /* Slightly lighter background for inputs */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.popup-content input:focus,
+.popup-content select:focus {
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+  outline: none;
+}
+
+.popup-content button {
+  margin: 0.5em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.popup-content button[type="submit"] {
+  background: #1e90ff; /* Blue button */
+  color: #ffffff;
+}
+
+.popup-content button[type="submit"]:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.popup-content button[type="button"] {
+  background: #ff4d4d; /* Red button */
+  color: #ffffff;
+}
+
+.popup-content button[type="button"]:hover {
+  background: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.timeframe-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.switch-btn {
+  padding: 0.5em 1em;
+  margin: 0 0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.switch-btn.active {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.switch-btn:hover {
+  background-color: #dcdcdc;
+}
+
+.expense-graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.expense-graph canvas {
+  width: 150px !important; /* Set a fixed width */
+  height: 150px !important; /* Set a fixed height */
+}

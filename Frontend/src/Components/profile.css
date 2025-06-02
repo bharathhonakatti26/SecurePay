@@ -1,0 +1,121 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80vh;
+  background: #000000; /* Black background */
+  color: #ffffff; /* White text */
+  padding: 0em 2em 0px 2em;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin-bottom: 2em;
+  background: #111111; /* Slightly lighter black for header */
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+  width: 100%;
+  max-width: 600px;
+}
+
+.profile-avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 3px solid #1e90ff; /* Blue border */
+}
+
+.profile-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff; /* White text */
+}
+
+.profile-email {
+  font-size: 1.2rem;
+  color: #b0c4de; /* Light blue text */
+  margin: 0.5em 0 0;
+}
+
+/* Profile Card */
+.profile-card {
+  background: #111111; /* Slightly lighter black for card */
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+  width: 100%;
+  max-width: 600px;
+}
+
+.profile-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #ffffff; /* White text */
+}
+
+/* Profile Grid */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 1em; /* Spacing between rows and columns */
+}
+
+.profile-grid p {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #b0c4de; /* Light blue text */
+}
+
+.profile-grid p strong {
+  color: #ffffff; /* White text for labels */
+}
+
+/* Profile Actions */
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}
+
+/* Common Button Styles */
+.profile-btn {
+  padding: 0.8em 1.5em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background 0.3s;
+  margin-top: 1em;
+}
+
+/* Save DOB Button */
+.profile-btn-blue {
+  background: #1e90ff; /* Blue button */
+}
+
+.profile-btn-blue:hover {
+  background: #1565c0; /* Darker blue on hover */
+}
+
+/* Logout Button */
+.profile-btn-red {
+  background: #ff4d4d; /* Red button */
+}
+
+.profile-btn-red:hover {
+  background: #d32f2f; /* Darker red on hover */
+}

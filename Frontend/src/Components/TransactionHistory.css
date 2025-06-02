@@ -1,0 +1,119 @@
+.transaction-history-container {
+  padding: 10px 20px 20px 20px;
+  max-width: 900px; /* Adjust as needed */
+  margin: 10px auto; /* Center the container */
+  background-color: #2c2c2c; /* Dark background for the container */
+  border-radius: 8px;
+  color: #f0f0f0; /* Light text color */
+}
+
+.transaction-history-title {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+  font-size: 1.8em;
+}
+
+.no-transactions-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: #aaa;
+}
+
+.transaction-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+}
+
+.transaction-card {
+  background-color: #3a3a3a; /* Darker card background */
+  border: 1px solid #4a4a4a; /* Subtle border */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  color: #d0d0d0; /* Text color for card content */
+}
+
+.transaction-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.transaction-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4f4f4f; /* Separator line */
+}
+
+.transaction-status {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.status-sent {
+  background-color: rgba(255, 107, 107, 0.2); /* Light red background */
+  color: #ff8a8a; /* Lighter red text */
+  border: 1px solid #ff6b6b;
+}
+
+.status-received {
+  background-color: rgba(107, 203, 119, 0.2); /* Light green background */
+  color: #89d891; /* Lighter green text */
+  border: 1px solid #6bcb77;
+}
+
+.transaction-timestamp {
+  font-size: 0.85em;
+  color: #a0a0a0; /* Dimmer color for timestamp */
+}
+
+.transaction-card-body p {
+  margin: 8px 0;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.transaction-card-body p strong {
+  color: #b0b0b0; /* Slightly lighter color for labels */
+  margin-right: 5px;
+}
+
+.amount-sent {
+  color: #ff8a8a;
+}
+
+.amount-received {
+  color: #89d891;
+}
+
+/* Optional: Footer styling if you add it */
+/*
+.transaction-card-footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #4f4f4f;
+  text-align: right;
+}
+
+.transaction-card-footer button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.transaction-card-footer button:hover {
+  background-color: #666;
+}
+*/
+
+/* Remove table-specific styles if they are no longer needed or might conflict */
+/* For example, if you had .transaction-history-table styles, you might comment them out */

@@ -1,0 +1,90 @@
+.fraud-report-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #2c2c2c; /* Dark background */
+  border-radius: 8px;
+  color: #f0f0f0; /* Light text color */
+}
+
+.fraud-report-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  font-size: 2em;
+}
+
+.no-fraud-reports-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #aaa;
+}
+
+.fraud-report-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+}
+
+.fraud-report-card {
+  background-color: #3a3a3a; /* Darker card background */
+  border: 1px solid #4a4a4a; /* Subtle border */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.fraud-report-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.fraud-report-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4f4f4f; /* Separator line */
+}
+
+.fraud-report-status {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.fraud-report-status {
+  background-color: rgba(255, 107, 107, 0.2); /* Light red background */
+  color: #ff8a8a; /* Lighter red text */
+  border: 1px solid #ff6b6b;
+}
+
+.fraud-report-timestamp {
+  font-size: 0.85em;
+  color: #a0a0a0; /* Dimmer color for timestamp */
+}
+
+.fraud-report-card-body p {
+  margin: 8px 0;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.fraud-report-card-body p strong {
+  color: #b0b0b0; /* Slightly lighter color for labels */
+  margin-right: 5px;
+}
+
+.fraud-report-card-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fraud-report-card-body ul li {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #d0d0d0;
+}

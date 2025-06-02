@@ -1,0 +1,637 @@
+/* Cards Container */
+.cards-container {
+    padding: 0.5em 2em;
+    background: #000000;
+    /* Black background */
+    color: #ffffff;
+    /* White text */
+    min-height: 86vh;
+}
+
+.cards-head {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+.cards-head-new {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+/* Cards Title */
+.cards-title {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    color: #1e90ff;
+    /* Blue text */
+    text-align: center;
+}
+
+.cards-title-new {
+    font-size: 2rem;
+    color: #1e90ff;
+    /* Blue text */
+}
+
+/* Add Card Button */
+.add-card-btn {
+  background: #1e90ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-card-btn:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* No Cards Message */
+.no-cards-message {
+    font-size: 1.2rem;
+    color: #b0c4de;
+    /* Light blue text */
+    text-align: center;
+    margin-top: 2em;
+}
+
+.no-cards-message-new {
+    font-size: 1.2rem;
+    color: #b0c4de;
+    /* Light blue text */
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Cards List */
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap to the next row */
+    gap: 1.5em;
+    /* Space between cards */
+    justify-content: center;
+}
+
+.cards-list-new {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap to the next row */
+    gap: 1.5em;
+    /* Space between cards */
+    justify-content: center;
+}
+
+/* Card Item */
+.card-item {
+    background: #1e1e2f;
+    /* Dark background for the card */
+    color: #ffffff;
+    /* White text */
+    border-radius: 12px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow */
+    padding: 1.5em;
+    width: 300px;
+    /* Fixed width for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+}
+
+.card-item-new {
+    background: #1e1e2f; /* Dark background for the card */
+    color: #ffffff; /* White text */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    padding: 1.5em;
+    width: 300px; /* Fixed width for consistency */
+    height: 150px; /* Fixed height to prevent text movement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.card-item-new:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    cursor: pointer;
+}
+
+/* Ensure text inside the card does not move */
+.card-item-new p {
+    margin: 0.5em 0;
+    font-size: 1rem;
+    color: #dcdcdc; /* Light gray text */
+    transition: color 0.3s ease; /* Optional: Smooth color transition */
+}
+
+.card-item-new:hover p {
+    color: #ffffff; /* Keep text color consistent on hover */
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.card-header-new {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header-new p{
+    margin: 0px;
+}
+
+.card-number-new p:hover{
+    margin: 0px;
+}
+
+.card-number {
+    font-size: 1rem;
+    color: #b0c4de;
+    /* Light blue text */
+}
+
+.card-number-new {
+    font-size: 1rem;
+    color: #b0c4de;
+    /* Light blue text */
+}
+
+/* Delete Card Button */
+.delete-card-btn {
+    background: #ff4d4d;
+    /* Red button */
+    color: #ffffff;
+    /* White text */
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.delete-card-btn:hover {
+    background: #d32f2f;
+    /* Darker red on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+.delete-card-btn-new {
+    background: #ff4d4d;
+    /* Red button */
+    color: #ffffff;
+    /* White text */
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.delete-card-btn-new:hover {
+    background: #d32f2f;
+    /* Darker red on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+/* Card Body */
+.card-body p {
+    margin: 0.5em 0;
+    font-size: 0.95rem;
+    color: #dcdcdc;
+    /* Light gray text */
+}
+
+.card-body-new p {
+    margin: 0.5em 0;
+    font-size: 0.95rem;
+    color: #dcdcdc;
+    /* Light gray text */
+}
+
+/* Add Card Form */
+.add-card-form-new {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e1e2f; /* Darker background for a modern look */
+    color: #ffffff; /* White text */
+    padding: 2em;
+    border-radius: 12px; /* Softer rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+    z-index: 1000;
+    width: 500px; /* Fixed width for consistency */
+}
+
+/* Add Card Title */
+.add-card-title-new {
+    margin-bottom: 1.5em;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #1e90ff; /* Blue heading for emphasis */
+}
+
+/* Form Labels */
+.add-card-label-new {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1rem;
+    color: #b0c4de; /* Light blue text for labels */
+}
+
+/* Card Number Input Container */
+.card-number-input-new {
+    display: flex;
+    gap: 0.5em; /* Space between input boxes */
+}
+
+/* Individual Card Number Input */
+.card-number-box-new {
+    width: 4em;
+    padding: 0.5em;
+    border: 1px solid #444444; /* Subtle border for inputs */
+    border-radius: 6px; /* Softer rounded corners */
+    background: #2a2a3b; /* Slightly lighter background for inputs */
+    color: #ffffff; /* White text */
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus transitions */
+}
+
+.card-number-box-new:focus {
+    border-color: #1e90ff; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+    outline: none;
+}
+
+/* Card Type Options */
+.card-type-options-new {
+    display: flex;
+    gap: 1em; /* Space between options */
+    margin-top: 0.5em;
+}
+
+/* Submit Button */
+.submit-card-btn-new {
+    background: #1e90ff; /* Blue button */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8em 1.5em;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.submit-card-btn-new:hover {
+    background: #1565c0; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Cancel Button */
+.cancel-card-btn-new {
+    background: #ff4d4d; /* Red button */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8em 1.5em;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.cancel-card-btn-new:hover {
+    background: #d32f2f; /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Add Card Button (Legacy) */
+.add-card-btn {
+  background: #1e90ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-card-btn:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Add Card Form (Legacy) */
+.add-card-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e1e2f; /* Darker background for a modern look */
+  color: #ffffff; /* White text */
+  padding: 2em;
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  z-index: 1000;
+  width: 500px; /* Fixed width for consistency */
+}
+
+.add-card-form h2 {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #1e90ff; /* Blue heading for emphasis */
+}
+
+.add-card-form label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: #b0c4de; /* Light blue text for labels */
+}
+
+.add-card-form input,
+.add-card-form select {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #444444; /* Subtle border for inputs */
+  border-radius: 6px; /* Softer rounded corners */
+  background: #2a2a3b; /* Slightly lighter background for inputs */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.add-card-form input:focus,
+.add-card-form select:focus {
+  border-color: #1e90ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Blue glow on focus */
+  outline: none;
+}
+
+.add-card-form button {
+  margin-right: 1em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-card-form button[type="submit"] {
+  background: #1e90ff; /* Blue button */
+  color: #ffffff;
+}
+
+.add-card-form button[type="submit"]:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.add-card-form button[type="button"] {
+  background: #ff4d4d; /* Red button */
+  color: #ffffff;
+}
+
+.add-card-form button[type="button"]:hover {
+  background: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* MPIN Popup */
+.mpin-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e1e2f;
+    color: #ffffff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    text-align: center;
+}
+
+.mpin-input-container {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    margin: 1em 0;
+}
+
+.mpin-box {
+    width: 2.5em;
+    height: 2.5em;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    background: #2a2a3b;
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.mpin-box:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+.mpin-popup button {
+    margin: 0.5em;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.mpin-popup button:first-of-type {
+    background: #1e90ff;
+    color: #ffffff;
+}
+
+.mpin-popup button:first-of-type:hover {
+    background: #1565c0;
+    transform: scale(1.05);
+}
+
+.mpin-popup button:last-of-type {
+    background: #ff4d4d;
+    color: #ffffff;
+}
+
+.mpin-popup button:last-of-type:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+}
+
+.popup-actions{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+/* Card Details Popup */
+.card-details-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 400px;
+}
+
+.popup-content h2 {
+  margin-bottom: 1.5em;
+}
+
+.popup-content p {
+  margin: 0.5em 0;
+}
+
+.popup-content button {
+  margin-top: 1em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  background: #1e90ff;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.popup-content button:hover {
+  background: #1565c0;
+}
+
+/* Unique Card Details Popup */
+.card-details-popup-securepay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content-securepay {
+  background: #1e1e2f; /* Dark background for the popup */
+  color: #ffffff; /* Light text for contrast */
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 400px;
+}
+
+.popup-content-securepay h2 {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  color: #1e90ff; /* Blue heading for emphasis */
+}
+
+.popup-content-securepay p {
+  margin: 0.5em 0;
+  font-size: 1rem;
+  color: #b0c4de; /* Light blue text for details */
+}
+
+.popup-content-securepay button {
+  margin-top: 1em;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 6px;
+  background: #1e90ff; /* Blue button */
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.popup-content-securepay button:hover {
+  background: #1565c0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Primary Card Button */
+.primary-card-btn {
+  background: #1e90ff;
+  color: #ffffff;
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.primary-card-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.primary-card-btn:hover:not(:disabled) {
+  background: #1565c0;
+  transform: scale(1.05);
+}
