@@ -75,7 +75,7 @@ SecurePay is a next-generation payment security platform that leverages AI and M
 ### **Prerequisites**
 - Node.js (v16 or higher)
 - MongoDB (local or cloud instance)
-- npm or yarn
+- npm
 
 ### **Setup**
 
